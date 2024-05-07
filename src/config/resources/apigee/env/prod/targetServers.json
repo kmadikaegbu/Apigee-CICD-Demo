@@ -1,0 +1,79 @@
+[
+    {
+        "name": "xtra-primary",
+        "host": "zee5-country-pt-alb.zee5.io",
+        "isEnabled": true,
+        "port": 443,
+        "sSLInfo": {
+            "clientAuthEnabled": "false",
+            "enabled": "true",
+            "ignoreValidationErrors": "true"
+        }
+    },
+    {
+        "name": "xtra-failover",
+        "host": "zee5-country-pt-alb.zee5.io",
+        "isEnabled": true,
+        "port": 443,
+        "sSLInfo": {
+            "clientAuthEnabled": "false",
+            "enabled": "true",
+            "ignoreValidationErrors": "true"
+        }
+    },
+    {
+        "name": "xtra-ap",
+        "host": "zee5-country-pt-alb.zee5.io",
+        "isEnabled": true,
+        "port": 443,
+        "sSLInfo": {
+            "clientAuthEnabled": "false",
+            "enabled": "true",
+            "ignoreValidationErrors": "true"
+        }
+    },
+    {
+        "name": "xtra-eu",
+        "host": "zee5-country-pt-alb.zee5.io",
+        "isEnabled": true,
+        "port": 443,
+        "sSLInfo": {
+            "clientAuthEnabled": "false",
+            "enabled": "true",
+            "ignoreValidationErrors": "true"
+        }
+    },
+    {
+        "name": "xtra-us",
+        "host": "zee5-country-pt-alb.zee5.io",
+        "isEnabled": true,
+        "port": 443,
+        "sSLInfo": {
+            "clientAuthEnabled": "false",
+            "enabled": "true",
+            "ignoreValidationErrors": "true"
+        }
+    },
+    {
+        "name": "launchapi-primary",
+        "host": "launchapi-pt.zee5.io",
+        "isEnabled": true,
+        "port": 443,
+        "sSLInfo": {
+            "clientAuthEnabled": "false",
+            "enabled": "true",
+            "ignoreValidationErrors": "true"
+        }
+    },
+    {
+        "name": "test-primary",
+        "host": "mocktarget.apigee.net",
+        "isEnabled": true,
+        "port": 443,
+        "sSLInfo": {
+            "clientAuthEnabled": "false",
+            "enabled": "true",
+            "ignoreValidationErrors": "true"
+        }
+    }
+]

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-DeleteHeaders-Default">
+    <DisplayName>AM-DeleteHeaders-Default</DisplayName>
+    <Remove>
+        <Headers>
+            <Header name="X-Powered-By"/>
+            <Header name="Server"/>
+        </Headers>
+    </Remove>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response">response</AssignTo>
+</AssignMessage>

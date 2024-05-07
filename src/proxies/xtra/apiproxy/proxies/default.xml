@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="block-wordpress-paths">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>RF-401</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix ~ "/zabbix.php**") or (proxy.pathsuffix ~ "/xmlrpc.php**") or (proxy.pathsuffix ~ "/wp-admin/admin-ajax.php**")</Condition>
+        </Flow>
+        <Flow name="country-flow">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>JS-SET-TRUE-CLIENT-IP</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM-ADD-CACHE-CONTROL-1</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix ~ "/country") or (proxy.pathsuffix ~ "/country/")</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <Name>AM-ADD-X-ORIGIN-PRIMARY</Name>
+                <Condition>(loadbalancing.isfallback IsNot true)</Condition>
+            </Step>
+            <Step>
+                <Name>AM-ADD-X-ORIGIN-FAILOVER</Name>
+                <Condition>(loadbalancing.isfallback Is true)</Condition>
+            </Step>
+            <Step>
+                <Name>AM-DEL-DEBUG</Name>
+                <Condition>(request.header.x-apigee-debug = "false")</Condition>
+            </Step>
+        </Response>
+    </PostFlow>
+    <HTTPProxyConnection>
+        <BasePath>/xtra</BasePath>
+    </HTTPProxyConnection>
+    <RouteRule name="us">
+        <TargetEndpoint>us</TargetEndpoint>
+        <Condition>system.region.name ~~ "us-.+"</Condition>
+    </RouteRule>
+    <RouteRule name="europe">
+        <TargetEndpoint>europe</TargetEndpoint>
+        <Condition>system.region.name ~~ "europe-.+"</Condition>
+    </RouteRule>
+    <RouteRule name="asia">
+        <TargetEndpoint>asia</TargetEndpoint>
+        <Condition>system.region.name ~~ "asia-.+"</Condition>
+    </RouteRule>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

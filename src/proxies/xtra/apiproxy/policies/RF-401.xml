@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RaiseFault name="RF-401">
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <FaultResponse>
+        <Set>
+            <Payload contentType="application/json">{
+    "status_code":401 ,
+    "respose": "Crash landed on the wrong runway - AK401"
+}
+</Payload>
+            <StatusCode>401</StatusCode>
+        </Set>
+    </FaultResponse>
+</RaiseFault>

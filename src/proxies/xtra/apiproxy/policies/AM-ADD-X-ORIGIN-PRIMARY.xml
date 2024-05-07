@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-ADD-X-ORIGIN-PRIMARY">
+  <DisplayName>AM-ADD-X-ORIGIN-PRIMARY</DisplayName>
+  <Add>
+    <Headers>
+      <Header name="x-origin">primary</Header>
+    </Headers>
+  </Add>
+  <AssignTo>response</AssignTo>
+</AssignMessage>

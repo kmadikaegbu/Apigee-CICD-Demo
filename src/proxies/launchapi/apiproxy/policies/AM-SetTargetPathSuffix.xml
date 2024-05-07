@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-SetTargetPathSuffix">
+    <DisplayName>AM-SetTargetPathSuffix</DisplayName>
+    <DisplayName>AM-SetTargetPathSuffix</DisplayName>
+    <AssignVariable>
+        <Name>target.copy.pathsuffix</Name>
+        <Value>false</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>target_pathsuffix</Name>
+        <Ref>proxy.pathsuffix</Ref>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="default">
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <Flows/>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <HTTPTargetConnection>
+        <LoadBalancer>
+            <Algorithm>RoundRobin</Algorithm>
+            <Server name="xtra-primary"/>
+            <Server name="xtra-failover">
+                <IsFallback>true</IsFallback>
+            </Server>
+            <MaxFailures>3</MaxFailures>
+        </LoadBalancer>
+        <Path>/</Path>
+        <HealthMonitor>
+            <IsEnabled>true</IsEnabled>
+            <IntervalInSec>5</IntervalInSec>
+            <TCPMonitor>
+                <ConnectTimeoutInSec>10</ConnectTimeoutInSec>
+                <Port>443</Port>
+            </TCPMonitor>
+        </HealthMonitor>
+    </HTTPTargetConnection>
+</TargetEndpoint>

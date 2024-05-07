@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="default">
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>AM-SetTargetPathSuffix</Name>
+            </Step>
+        </Request>
+        <Response/>
+    </PreFlow>
+    <Flows>
+        <Flow name="countrylist">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>AM-RewriteURL-Countrylist</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>proxy.pathsuffix MatchesPath "/front/countrylist.php"</Condition>
+        </Flow>
+        <Flow name="getlang">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>AM-ReWriteURL-Getlang</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>proxy.pathsuffix MatchesPath "/getlang.php"</Condition>
+        </Flow>
+        <Flow name="launch_api">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>AM-ReWriteURL-LaunchAPI</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>proxy.pathsuffix MatchesPath "/launch_api/launch_api.php"</Condition>
+        </Flow>
+        <Flow name="platform_tokens">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>AM-ReWriteURL-PlatformTokens</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>proxy.pathsuffix MatchesPath "/token/platform_tokens.php"</Condition>
+        </Flow>
+    </Flows>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <Name>AM-DeleteHeaders-Default</Name>
+            </Step>
+            <Step>
+                <Name>AM-ADD-CACHE-CONTROL-1</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <HTTPTargetConnection>
+        <SSLInfo>
+            <Enabled>true</Enabled>
+            <IgnoreValidationErrors>true</IgnoreValidationErrors>
+        </SSLInfo>
+        <LoadBalancer>
+            <Algorithm>RoundRobin</Algorithm>
+            <Server name="launchapi-primary"/>
+        </LoadBalancer>
+        <Path>{target_pathsuffix}</Path>
+    </HTTPTargetConnection>
+</TargetEndpoint>

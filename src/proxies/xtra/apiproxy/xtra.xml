@@ -1,0 +1,27 @@
+<APIProxy revision="15" name="xtra">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1686222978122</CreatedAt>
+    <LastModifiedAt>1686222978122</LastModifiedAt>
+    <BasePaths>/xtra</BasePaths>
+    <Policies>
+        <Policy>AM-ADD-X-ORIGIN-FAILOVER</Policy>
+        <Policy>AM-ADD-CACHE-CONTROL-1</Policy>
+        <Policy>AM-DEL-DEBUG</Policy>
+        <Policy>AM-ADD-X-ORIGIN-PRIMARY</Policy>
+        <Policy>RF-401</Policy>
+        <Policy>JS-SET-TRUE-CLIENT-IP</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://set-true-client-ip.js</Resource>
+    </Resources>
+    <TargetEndpoints>
+        <TargetEndpoint>asia</TargetEndpoint>
+        <TargetEndpoint>default</TargetEndpoint>
+        <TargetEndpoint>europe</TargetEndpoint>
+        <TargetEndpoint>us</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

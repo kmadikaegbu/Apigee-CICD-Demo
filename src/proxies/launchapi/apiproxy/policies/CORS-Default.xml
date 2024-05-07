@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CORS continueOnError="false" enabled="true" name="CORS-Default">
+    <DisplayName>CORS-Default</DisplayName>
+    <AllowOrigins>*</AllowOrigins>
+    <AllowMethods>GET, PUT, POST, DELETE, PATCH</AllowMethods>
+    <AllowHeaders>*</AllowHeaders>
+    <MaxAge>300</MaxAge>
+    <AllowCredentials>false</AllowCredentials>
+    <GeneratePreflightResponse>true</GeneratePreflightResponse>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</CORS>

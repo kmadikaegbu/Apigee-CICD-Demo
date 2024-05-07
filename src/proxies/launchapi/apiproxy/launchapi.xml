@@ -1,0 +1,23 @@
+<APIProxy revision="9" name="launchapi">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1686238163378</CreatedAt>
+    <LastModifiedAt>1686238163378</LastModifiedAt>
+    <BasePaths>/launchapi</BasePaths>
+    <Policies>
+        <Policy>AM-ADD-CACHE-CONTROL-1</Policy>
+        <Policy>AM-DeleteHeaders-Default</Policy>
+        <Policy>CORS-Default</Policy>
+        <Policy>AM-ReWriteURL-Getlang</Policy>
+        <Policy>AM-ReWriteURL-LaunchAPI</Policy>
+        <Policy>AM-ReWriteURL-PlatformTokens</Policy>
+        <Policy>AM-SetTargetPathSuffix</Policy>
+        <Policy>AM-RewriteURL-Countrylist</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
